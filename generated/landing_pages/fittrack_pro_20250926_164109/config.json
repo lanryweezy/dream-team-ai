@@ -1,0 +1,19 @@
+{
+  "company_name": "FitTrack Pro",
+  "generated_at": "2025-09-26T16:41:09.917206",
+  "files": [
+    "index.html",
+    "styles.css",
+    "script.js"
+  ],
+  "config": {
+    "company_name": "FitTrack Pro",
+    "tagline": "Track your fitness journey",
+    "description": "The ultimate fitness tracking app",
+    "features": [
+      "Workout tracking",
+      "Progress analytics",
+      "Social sharing"
+    ]
+  }
+}

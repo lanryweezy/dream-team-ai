@@ -1,0 +1,82 @@
+{
+  "integration_test_summary": {
+    "total_tests": 7,
+    "passed_tests": 4,
+    "failed_tests": 3,
+    "success_rate": 57.14285714285714,
+    "total_duration": 5.187046051025391,
+    "average_test_duration": 0.741006578717913
+  },
+  "test_results": [
+    {
+      "test": "system_initialization",
+      "status": "PASSED",
+      "duration": 0.0025489330291748047,
+      "details": "System initialized successfully"
+    },
+    {
+      "test": "multi_agent_communication",
+      "status": "FAILED",
+      "duration": 2.015479564666748,
+      "error": ""
+    },
+    {
+      "test": "policy_engine_integration",
+      "status": "FAILED",
+      "duration": 0.0006868839263916016,
+      "error": ""
+    },
+    {
+      "test": "cost_tracking_integration",
+      "status": "FAILED",
+      "duration": 0.06755495071411133,
+      "error": ""
+    },
+    {
+      "test": "performance_under_load",
+      "status": "PASSED",
+      "duration": 1.080540418624878,
+      "details": "Processed 50/50 messages at 46.27 msg/s"
+    },
+    {
+      "test": "error_recovery_scenarios",
+      "status": "PASSED",
+      "duration": 0.003312349319458008,
+      "details": "Successfully recovered from simulated failures"
+    },
+    {
+      "test": "business_scenario_simulation",
+      "status": "PASSED",
+      "duration": 2.016922950744629,
+      "details": "Successfully simulated multi-agent business workflow"
+    }
+  ],
+  "performance_metrics": {
+    "system": {
+      "cpu_percent": 42.9,
+      "memory_percent": 94.8,
+      "memory_used_mb": 15178.41015625,
+      "disk_usage_percent": 74.2,
+      "active_processes": 441,
+      "timestamp": "2025-09-26T15:41:08.939488+00:00"
+    },
+    "agents": {},
+    "summary": {
+      "total_agents": 0,
+      "healthy_agents": 0,
+      "average_response_time": 0
+    }
+  },
+  "system_health": {
+    "message_bus": "operational",
+    "policy_engine": "operational",
+    "cost_tracker": "operational",
+    "performance_monitor": "operational"
+  },
+  "recommendations": [
+    "Address 3 failed test(s) before production deployment",
+    "Implement continuous integration testing",
+    "Set up automated performance monitoring",
+    "Create disaster recovery procedures"
+  ]
+}

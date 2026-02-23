@@ -1,0 +1,16 @@
+{
+  "core_tests": {
+    "enhanced_base_agent": "\u2705 PASSED",
+    "enhanced_message_bus": "\u2705 PASSED",
+    "enhanced_policy_engine": "\u2705 PASSED",
+    "enhanced_cost_tracker": "\u2705 PASSED",
+    "enhanced_goal_planner": "\u2705 PASSED",
+    "company_blueprint_dataclass": "\u2705 PASSED"
+  },
+  "agent_tests": {},
+  "toolkit_tests": {},
+  "integration_tests": {},
+  "total_passed": 7,
+  "total_failed": 0,
+  "errors": []
+}

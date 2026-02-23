@@ -1,0 +1,48 @@
+{
+  "core_tests": {
+    "base_agent": "\u274c FAILED: Can't instantiate abstract class BaseAgent without an implementation for abstract methods 'execute_task', 'get_daily_goals'",
+    "message_bus": "\u274c FAILED: 'MessageBus' object has no attribute 'start'",
+    "policy_engine": "\u274c FAILED: cannot import name 'Policy' from 'core.policy_engine' (C:\\Users\\lanry\\Desktop\\dream team\\core\\policy_engine.py)",
+    "cost_tracker": "\u274c FAILED: CostEntry.__init__() got an unexpected keyword argument 'action'",
+    "goal_planner": "\u274c FAILED: cannot import name 'Goal' from 'core.goal_planner' (C:\\Users\\lanry\\Desktop\\dream team\\core\\goal_planner.py)",
+    "company_blueprint": "\u274c FAILED: cannot import name 'BusinessModel' from 'core.company_blueprint' (C:\\Users\\lanry\\Desktop\\dream team\\core\\company_blueprint.py)"
+  },
+  "agent_tests": {
+    "ceo_agent": "\u274c FAILED: Error 22 connecting to localhost:6379. 22.",
+    "finance_agent": "\u274c FAILED: Error 22 connecting to localhost:6379. 22.",
+    "marketing_agent": "\u274c FAILED: invalid character '\ud83d\udc4b' (U+1F44B) (email_manager.py, line 451)",
+    "product_agent": "\u274c FAILED: Error 22 connecting to localhost:6379. 22.",
+    "sales_agent": "\u274c FAILED: Error 22 connecting to localhost:6379. 22.",
+    "investor_agent": "\u274c FAILED: Error 22 connecting to localhost:6379. 22."
+  },
+  "toolkit_tests": {
+    "landing_page_generator": "\u274c FAILED: cannot import name 'LandingPageGenerator' from 'toolkit.landing_page_generator' (C:\\Users\\lanry\\Desktop\\dream team\\toolkit\\landing_page_generator.py)",
+    "repo_manager": "\u274c FAILED: 'RepoManager' object has no attribute 'create_repo_structure'",
+    "email_manager": "\u274c FAILED: invalid character '\ud83d\udc4b' (U+1F44B) (email_manager.py, line 451)",
+    "deployment_manager": "\u274c FAILED: 'DeploymentManager' object has no attribute 'create_deployment_plan'"
+  },
+  "integration_tests": {
+    "company_creation_workflow": "\u274c FAILED: cannot import name 'LandingPageGenerator' from 'toolkit.landing_page_generator' (C:\\Users\\lanry\\Desktop\\dream team\\toolkit\\landing_page_generator.py)"
+  },
+  "total_passed": 0,
+  "total_failed": 17,
+  "errors": [
+    "Base Agent: Can't instantiate abstract class BaseAgent without an implementation for abstract methods 'execute_task', 'get_daily_goals'",
+    "Message Bus: 'MessageBus' object has no attribute 'start'",
+    "Policy Engine: cannot import name 'Policy' from 'core.policy_engine' (C:\\Users\\lanry\\Desktop\\dream team\\core\\policy_engine.py)",
+    "Cost Tracker: CostEntry.__init__() got an unexpected keyword argument 'action'",
+    "Goal Planner: cannot import name 'Goal' from 'core.goal_planner' (C:\\Users\\lanry\\Desktop\\dream team\\core\\goal_planner.py)",
+    "Company Blueprint: cannot import name 'BusinessModel' from 'core.company_blueprint' (C:\\Users\\lanry\\Desktop\\dream team\\core\\company_blueprint.py)",
+    "CEO Agent: Error 22 connecting to localhost:6379. 22.",
+    "Finance Agent: Error 22 connecting to localhost:6379. 22.",
+    "Marketing Agent: invalid character '\ud83d\udc4b' (U+1F44B) (email_manager.py, line 451)",
+    "Product Agent: Error 22 connecting to localhost:6379. 22.",
+    "Sales Agent: Error 22 connecting to localhost:6379. 22.",
+    "Investor Agent: Error 22 connecting to localhost:6379. 22.",
+    "Landing Page Generator: cannot import name 'LandingPageGenerator' from 'toolkit.landing_page_generator' (C:\\Users\\lanry\\Desktop\\dream team\\toolkit\\landing_page_generator.py)",
+    "Repo Manager: 'RepoManager' object has no attribute 'create_repo_structure'",
+    "Email Manager: invalid character '\ud83d\udc4b' (U+1F44B) (email_manager.py, line 451)",
+    "Deployment Manager: 'DeploymentManager' object has no attribute 'create_deployment_plan'",
+    "Company Creation Workflow: cannot import name 'LandingPageGenerator' from 'toolkit.landing_page_generator' (C:\\Users\\lanry\\Desktop\\dream team\\toolkit\\landing_page_generator.py)"
+  ]
+}

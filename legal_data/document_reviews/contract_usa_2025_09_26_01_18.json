@@ -1,0 +1,36 @@
+{
+  "document_type": "contract",
+  "jurisdiction": "USA",
+  "analysis": {
+    "document_type": "contract",
+    "jurisdiction": "USA",
+    "review_checklist": {
+      "key_clauses": [
+        "Parties identification",
+        "Scope of work/services",
+        "Payment terms",
+        "Intellectual property rights",
+        "Limitation of liability",
+        "Termination provisions",
+        "Governing law",
+        "Dispute resolution"
+      ],
+      "red_flags": [
+        "Unlimited liability",
+        "Automatic renewal without notice",
+        "Broad indemnification",
+        "Exclusive dealing requirements",
+        "Unreasonable termination penalties"
+      ]
+    },
+    "document_length": 39,
+    "recommendations": [
+      "Ensure all key clauses are present",
+      "Review for jurisdiction-specific requirements",
+      "Consider legal counsel review",
+      "Update based on current regulations"
+    ],
+    "risk_level": "Medium - Requires legal review"
+  },
+  "reviewed_at": "2025-09-26T01:18:28.575845"
+}

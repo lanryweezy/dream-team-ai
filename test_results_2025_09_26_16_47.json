@@ -1,0 +1,37 @@
+{
+  "core_tests": {
+    "base_agent": "\u274c FAILED: Can't instantiate abstract class BaseAgent without an implementation for abstract methods 'execute_task', 'get_daily_goals'",
+    "message_bus": "\u274c FAILED: Error 22 connecting to localhost:6379. 22.",
+    "policy_engine": "\u2705 PASSED",
+    "cost_tracker": "\u274c FAILED: CostEntry.__init__() got an unexpected keyword argument 'action'",
+    "goal_planner": "\u274c FAILED: Milestone.__init__() got an unexpected keyword argument 'id'",
+    "company_blueprint": "\u274c FAILED: cannot import name 'TargetMarket' from 'core.company_blueprint' (C:\\Users\\lanry\\Desktop\\dream team\\core\\company_blueprint.py)"
+  },
+  "agent_tests": {
+    "ceo_agent": "\u2705 PASSED",
+    "finance_agent": "\u2705 PASSED",
+    "marketing_agent": "\u2705 PASSED",
+    "product_agent": "\u2705 PASSED",
+    "sales_agent": "\u2705 PASSED",
+    "investor_agent": "\u2705 PASSED"
+  },
+  "toolkit_tests": {
+    "landing_page_generator": "\u2705 PASSED",
+    "repo_manager": "\u2705 PASSED",
+    "email_manager": "\u2705 PASSED",
+    "deployment_manager": "\u2705 PASSED"
+  },
+  "integration_tests": {
+    "company_creation_workflow": "\u274c FAILED: Workflow integration failed"
+  },
+  "total_passed": 11,
+  "total_failed": 6,
+  "errors": [
+    "Base Agent: Can't instantiate abstract class BaseAgent without an implementation for abstract methods 'execute_task', 'get_daily_goals'",
+    "Message Bus: Error 22 connecting to localhost:6379. 22.",
+    "Cost Tracker: CostEntry.__init__() got an unexpected keyword argument 'action'",
+    "Goal Planner: Milestone.__init__() got an unexpected keyword argument 'id'",
+    "Company Blueprint: cannot import name 'TargetMarket' from 'core.company_blueprint' (C:\\Users\\lanry\\Desktop\\dream team\\core\\company_blueprint.py)",
+    "Company Creation Workflow: Workflow integration failed"
+  ]
+}

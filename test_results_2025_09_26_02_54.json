@@ -1,0 +1,47 @@
+{
+  "core_tests": {
+    "base_agent": "\u274c FAILED: Can't instantiate abstract class BaseAgent without an implementation for abstract methods 'execute_task', 'get_daily_goals'",
+    "message_bus": "\u274c FAILED: 'MessageBus' object has no attribute 'start'",
+    "policy_engine": "\u2705 PASSED",
+    "cost_tracker": "\u274c FAILED: CostEntry.__init__() got an unexpected keyword argument 'action'",
+    "goal_planner": "\u274c FAILED: cannot import name 'Goal' from 'core.goal_planner' (C:\\Users\\lanry\\Desktop\\dream team\\core\\goal_planner.py)",
+    "company_blueprint": "\u274c FAILED: cannot import name 'BusinessModel' from 'core.company_blueprint' (C:\\Users\\lanry\\Desktop\\dream team\\core\\company_blueprint.py)"
+  },
+  "agent_tests": {
+    "ceo_agent": "\u274c FAILED: Error 22 connecting to localhost:6379. 22.",
+    "finance_agent": "\u274c FAILED: Error 22 connecting to localhost:6379. 22.",
+    "marketing_agent": "\u274c FAILED: Error 22 connecting to localhost:6379. 22.",
+    "product_agent": "\u274c FAILED: Error 22 connecting to localhost:6379. 22.",
+    "sales_agent": "\u274c FAILED: Error 22 connecting to localhost:6379. 22.",
+    "investor_agent": "\u274c FAILED: Error 22 connecting to localhost:6379. 22."
+  },
+  "toolkit_tests": {
+    "landing_page_generator": "\u274c FAILED: 'dict' object has no attribute 'lower'",
+    "repo_manager": "\u274c FAILED: 'RepoManager' object has no attribute 'create_repo_structure'",
+    "email_manager": "\u274c FAILED: EmailManager.create_email_template() missing 2 required positional arguments: 'subject_template' and 'text_template'",
+    "deployment_manager": "\u274c FAILED: 'DeploymentManager' object has no attribute 'create_deployment_plan'"
+  },
+  "integration_tests": {
+    "company_creation_workflow": "\u274c FAILED: Error 22 connecting to localhost:6379. 22."
+  },
+  "total_passed": 1,
+  "total_failed": 16,
+  "errors": [
+    "Base Agent: Can't instantiate abstract class BaseAgent without an implementation for abstract methods 'execute_task', 'get_daily_goals'",
+    "Message Bus: 'MessageBus' object has no attribute 'start'",
+    "Cost Tracker: CostEntry.__init__() got an unexpected keyword argument 'action'",
+    "Goal Planner: cannot import name 'Goal' from 'core.goal_planner' (C:\\Users\\lanry\\Desktop\\dream team\\core\\goal_planner.py)",
+    "Company Blueprint: cannot import name 'BusinessModel' from 'core.company_blueprint' (C:\\Users\\lanry\\Desktop\\dream team\\core\\company_blueprint.py)",
+    "CEO Agent: Error 22 connecting to localhost:6379. 22.",
+    "Finance Agent: Error 22 connecting to localhost:6379. 22.",
+    "Marketing Agent: Error 22 connecting to localhost:6379. 22.",
+    "Product Agent: Error 22 connecting to localhost:6379. 22.",
+    "Sales Agent: Error 22 connecting to localhost:6379. 22.",
+    "Investor Agent: Error 22 connecting to localhost:6379. 22.",
+    "Landing Page Generator: 'dict' object has no attribute 'lower'",
+    "Repo Manager: 'RepoManager' object has no attribute 'create_repo_structure'",
+    "Email Manager: EmailManager.create_email_template() missing 2 required positional arguments: 'subject_template' and 'text_template'",
+    "Deployment Manager: 'DeploymentManager' object has no attribute 'create_deployment_plan'",
+    "Company Creation Workflow: Error 22 connecting to localhost:6379. 22."
+  ]
+}

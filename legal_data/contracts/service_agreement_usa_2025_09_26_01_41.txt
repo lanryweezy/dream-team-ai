@@ -1,0 +1,37 @@
+
+SERVICE AGREEMENT
+
+This Service Agreement ("Agreement") is entered into on [DATE] between:
+
+Client: Acme Corp
+Address: 123 Business St, New York, NY
+
+Service Provider: Dream Team LLC  
+Address: 456 Tech Ave, San Francisco, CA
+
+1. SERVICES
+The Service Provider agrees to provide the following services:
+Software development services
+
+2. PAYMENT TERMS
+- Total Fee: $50,000
+- Payment Schedule: Net 30 days
+- Late Payment: 1.5% per month on overdue amounts
+
+3. INTELLECTUAL PROPERTY
+All work product created shall be owned by Client.
+
+4. LIMITATION OF LIABILITY
+Service Provider's liability shall not exceed the total fees paid under this Agreement.
+
+5. TERMINATION
+Either party may terminate with 30 days written notice.
+
+6. GOVERNING LAW
+This Agreement shall be governed by the laws of California.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement.
+
+Client: ___________________ Date: ___________
+Service Provider: ___________________ Date: ___________
+                    

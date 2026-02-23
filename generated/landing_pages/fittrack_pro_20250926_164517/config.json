@@ -1,0 +1,20 @@
+{
+  "company_name": "FitTrack Pro",
+  "generated_at": "2025-09-26T16:45:17.098849",
+  "files": [
+    "index.html",
+    "styles.css",
+    "script.js"
+  ],
+  "config": {
+    "company_name": "FitTrack Pro",
+    "tagline": "Your fitness journey starts here",
+    "description": "Track workouts, monitor progress, achieve goals",
+    "features": [
+      "Workout Tracking",
+      "Progress Analytics",
+      "Goal Setting"
+    ],
+    "cta_text": "Join Waitlist"
+  }
+}

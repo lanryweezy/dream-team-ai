@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitTrack Pro - Track your fitness journey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>FitTrack Pro</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <button class="cta-button" onclick="openWaitlistModal()">Join Waitlist</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Track your fitness journey</h1>
+            <p class="hero-description">The ultimate fitness tracking app</p>
+            <div class="hero-actions">
+                <button class="primary-button" onclick="openWaitlistModal()">Get Early Access</button>
+                <button class="secondary-button" onclick="scrollToSection('features')">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-placeholder">
+                <p>🚀 Product Demo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Why Choose FitTrack Pro?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Workout tracking</h3>
+                    <p>Experience the power of workout tracking with our innovative solution.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Progress analytics</h3>
+                    <p>Experience the power of progress analytics with our innovative solution.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Social sharing</h3>
+                    <p>Experience the power of social sharing with our innovative solution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About FitTrack Pro</h2>
+                <p>We're on a mission to revolutionize the industry with cutting-edge technology and innovative solutions. Our team is passionate about creating products that make a real difference.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <h3>1000+</h3>
+                        <p>Early Users</p>
+                    </div>
+                    <div class="stat">
+                        <h3>99%</h3>
+                        <p>Satisfaction</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Ready to join the revolution? We'd love to hear from you.</p>
+            <button class="primary-button" onclick="openWaitlistModal()">Join Our Waitlist</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>FitTrack Pro</h3>
+                    <p>Track your fitness journey</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitTrack Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Waitlist Modal -->
+    <div id="waitlistModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeWaitlistModal()">&times;</span>
+            <h2>Join Our Waitlist</h2>
+            <p>Be the first to know when we launch!</p>
+            <form id="waitlistForm" onsubmit="submitWaitlist(event)">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <input type="text" id="name" placeholder="Your name (optional)">
+                <button type="submit" class="primary-button">Join Waitlist</button>
+            </form>
+            <div id="waitlistSuccess" class="success-message" style="display: none;">
+                <p>✅ Thanks! You're on the list. We'll be in touch soon.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

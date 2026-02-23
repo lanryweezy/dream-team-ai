@@ -1,0 +1,41 @@
+{
+  "core_tests": {
+    "base_agent": "\u274c FAILED: Can't instantiate abstract class BaseAgent without an implementation for abstract methods 'execute_task', 'get_daily_goals'",
+    "message_bus": "\u274c FAILED: 'MessageBus' object has no attribute 'start'",
+    "policy_engine": "\u2705 PASSED",
+    "cost_tracker": "\u274c FAILED: CostEntry.__init__() got an unexpected keyword argument 'action'",
+    "goal_planner": "\u274c FAILED: Milestone.__init__() got an unexpected keyword argument 'id'",
+    "company_blueprint": "\u274c FAILED: cannot import name 'TargetMarket' from 'core.company_blueprint' (C:\\Users\\lanry\\Desktop\\dream team\\core\\company_blueprint.py)"
+  },
+  "agent_tests": {
+    "ceo_agent": "\u2705 PASSED",
+    "finance_agent": "\u2705 PASSED",
+    "marketing_agent": "\u2705 PASSED",
+    "product_agent": "\u2705 PASSED",
+    "sales_agent": "\u2705 PASSED",
+    "investor_agent": "\u2705 PASSED"
+  },
+  "toolkit_tests": {
+    "landing_page_generator": "\u274c FAILED: 'dict' object has no attribute 'lower'",
+    "repo_manager": "\u274c FAILED: 'RepoManager' object has no attribute 'create_repo_structure'",
+    "email_manager": "\u274c FAILED: EmailManager.create_email_template() missing 2 required positional arguments: 'subject_template' and 'text_template'",
+    "deployment_manager": "\u274c FAILED: 'DeploymentManager' object has no attribute 'create_deployment_plan'"
+  },
+  "integration_tests": {
+    "company_creation_workflow": "\u274c FAILED: 'dict' object has no attribute 'lower'"
+  },
+  "total_passed": 7,
+  "total_failed": 10,
+  "errors": [
+    "Base Agent: Can't instantiate abstract class BaseAgent without an implementation for abstract methods 'execute_task', 'get_daily_goals'",
+    "Message Bus: 'MessageBus' object has no attribute 'start'",
+    "Cost Tracker: CostEntry.__init__() got an unexpected keyword argument 'action'",
+    "Goal Planner: Milestone.__init__() got an unexpected keyword argument 'id'",
+    "Company Blueprint: cannot import name 'TargetMarket' from 'core.company_blueprint' (C:\\Users\\lanry\\Desktop\\dream team\\core\\company_blueprint.py)",
+    "Landing Page Generator: 'dict' object has no attribute 'lower'",
+    "Repo Manager: 'RepoManager' object has no attribute 'create_repo_structure'",
+    "Email Manager: EmailManager.create_email_template() missing 2 required positional arguments: 'subject_template' and 'text_template'",
+    "Deployment Manager: 'DeploymentManager' object has no attribute 'create_deployment_plan'",
+    "Company Creation Workflow: 'dict' object has no attribute 'lower'"
+  ]
+}

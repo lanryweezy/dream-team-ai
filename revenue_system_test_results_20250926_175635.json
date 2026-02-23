@@ -1,0 +1,43 @@
+{
+  "test_summary": {
+    "total_tests": 5,
+    "passed_tests": 5,
+    "failed_tests": 0,
+    "success_rate": 100.0
+  },
+  "test_results": [
+    {
+      "test": "dream_to_blueprint",
+      "status": "PASSED",
+      "blueprint_name": "New Venture",
+      "opportunity_score": 90
+    },
+    {
+      "test": "mba_frameworks",
+      "status": "PASSED",
+      "opportunity_score": 90,
+      "market_size": 100000000
+    },
+    {
+      "test": "llm_business_insights",
+      "status": "PASSED",
+      "llm_provider": "ollama",
+      "availability": true
+    },
+    {
+      "test": "revenue_optimization",
+      "status": "PASSED",
+      "ltv_cac_ratio": 8.0,
+      "monthly_arpu": 100.0,
+      "recommendations_count": 2
+    },
+    {
+      "test": "end_to_end_workflow",
+      "status": "PASSED",
+      "company_name": "New Venture",
+      "opportunity_score": 90,
+      "projected_mrr": 50000
+    }
+  ],
+  "timestamp": "2025-09-26T17:56:35.796549+00:00"
+}

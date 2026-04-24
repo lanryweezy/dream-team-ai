@@ -266,7 +266,7 @@ class RetryMechanism:
                     logger.warning(f"Test {test_name} failed (attempt {attempt + 1}), retrying in {wait_time}s")
                     await asyncio.sleep(wait_time)
                 else:
-                    logger.error(f"Test {test_name} failed after {self.max_retries} retries")
+                    logger.error(f"Test {test_name} failed after {self.max_retries} retries: {last_error}")
                     
         return TestResult(
             test_id=f"{test_name}_{int(time.time())}",
@@ -478,10 +478,7 @@ class EnhancedTestSuite:
         async def test_end_to_end_company_creation():
             """Test complete company creation workflow"""
             # Mock all external dependencies
-            with mock.patch.multiple(
-                'agents.ceo_agent',
-                CEOAgent=mock.MagicMock(),
-            ):
+            with mock.patch('agents.ceo_agent.CEOAgent'):
                 # Simulate complete workflow
                 workflow_steps = [
                     "blueprint_creation",

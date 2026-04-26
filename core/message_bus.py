@@ -4,6 +4,7 @@ Handles event-driven communication between all agents
 """
 
 import json
+import traceback
 import asyncio
 import logging
 from typing import Dict, Any, Optional, Callable, List
@@ -134,6 +135,16 @@ class MessageBus:
                                 await handler(msg)
                             except Exception as e:
                                 logger.error(f"Handler error for {agent_id}: {e}")
+                                error_details = traceback.format_exc()
+                                # Push to DLQ
+                                dlq_payload = {
+                                    "message": msg_data,
+                                    "error": str(e),
+                                    "traceback": error_details,
+                                    "failed_at": datetime.utcnow().isoformat(),
+                                    "agent_id": agent_id
+                                }
+                                await self.redis_client.lpush("dlq:messages", json.dumps(dlq_payload))
                                 
                     except Exception as e:
                         logger.error(f"Failed to process message for {agent_id}: {e}")
@@ -143,6 +154,20 @@ class MessageBus:
         finally:
             await pubsub.unsubscribe(f"agent:{agent_id}")
             
+
+    async def get_dlq_messages(self, limit: int = 100) -> List[Dict[str, Any]]:
+        """Get messages from the Dead Letter Queue"""
+        if not self.redis_client:
+            return []
+
+        messages = await self.redis_client.lrange("dlq:messages", 0, limit - 1)
+        return [json.loads(m) for m in messages]
+
+    async def clear_dlq(self):
+        """Clear the Dead Letter Queue"""
+        if self.redis_client:
+            await self.redis_client.delete("dlq:messages")
+
     async def get_pending_messages(self, agent_id: str) -> List[Message]:
         """Get pending messages for an agent"""
         messages = []

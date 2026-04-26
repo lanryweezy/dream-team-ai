@@ -6,6 +6,7 @@ Handles payments, accounting, budgeting, and financial tracking
 import asyncio
 import logging
 import json
+import sqlite3
 import os
 from typing import Dict, Any, List
 from datetime import datetime, timedelta
@@ -15,7 +16,10 @@ from core.base_agent import BaseAgent, AgentCapability, TaskResult
 logger = logging.getLogger(__name__)
 
 class FinanceAgent(BaseAgent):
+
     def __init__(self):
+        self.db_path = "finance_agent.db"
+        self._init_db()
         capabilities = [
             AgentCapability(
                 name="setup_payments",
@@ -111,12 +115,15 @@ class FinanceAgent(BaseAgent):
             "created_at": datetime.utcnow().isoformat()
         }
         
-        # Save payment configuration
-        os.makedirs("config", exist_ok=True)
-        config_file = f"config/payment_{provider}.json"
-        
-        with open(config_file, "w") as f:
-            json.dump(payment_config, f, indent=2)
+        # Save payment configuration to DB
+        conn = sqlite3.connect(self.db_path)
+        c = conn.cursor()
+        c.execute('''
+            INSERT OR REPLACE INTO payment_configs (provider, config, created_at)
+            VALUES (?, ?, ?)
+        ''', (provider, json.dumps(payment_config), datetime.utcnow().isoformat()))
+        conn.commit()
+        conn.close()
             
         return TaskResult(
             success=True,
@@ -171,21 +178,24 @@ class FinanceAgent(BaseAgent):
             categorized_expenses.append(categorized_expense)
             total_amount += amount
             
-        # Save expense data
-        os.makedirs("financial_data", exist_ok=True)
-        expense_file = f"financial_data/expenses_{datetime.utcnow().strftime('%Y_%m')}.json"
-        
-        # Load existing expenses if file exists
-        existing_expenses = []
-        if os.path.exists(expense_file):
-            with open(expense_file, "r") as f:
-                existing_expenses = json.load(f)
-                
-        # Add new expenses
+        # Save expense data to DB
+        period = datetime.utcnow().strftime('%Y_%m')
+        conn = sqlite3.connect(self.db_path)
+        c = conn.cursor()
+
+        # Load existing expenses
+        c.execute('SELECT data FROM expenses WHERE period = ?', (period,))
+        row = c.fetchone()
+        existing_expenses = json.loads(row[0]) if row else []
+
         existing_expenses.extend(categorized_expenses)
         
-        with open(expense_file, "w") as f:
-            json.dump(existing_expenses, f, indent=2)
+        c.execute('''
+            INSERT OR REPLACE INTO expenses (id, period, data)
+            VALUES ((SELECT id FROM expenses WHERE period = ?), ?, ?)
+        ''', (period, period, json.dumps(existing_expenses)))
+        conn.commit()
+        conn.close()
             
         return TaskResult(
             success=True,
@@ -336,19 +346,15 @@ class FinanceAgent(BaseAgent):
             "added_at": datetime.utcnow().isoformat()
         }
         
-        # Save subscription
-        os.makedirs("financial_data", exist_ok=True)
-        subscriptions_file = "financial_data/subscriptions.json"
-        
-        subscriptions = []
-        if os.path.exists(subscriptions_file):
-            with open(subscriptions_file, "r") as f:
-                subscriptions = json.load(f)
-                
-        subscriptions.append(subscription_data)
-        
-        with open(subscriptions_file, "w") as f:
-            json.dump(subscriptions, f, indent=2)
+        # Save subscription to DB
+        conn = sqlite3.connect(self.db_path)
+        c = conn.cursor()
+        c.execute('''
+            INSERT INTO subscriptions (id, name, provider, cost, billing_cycle, category, status, start_date)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (subscription_id, service_name, provider, cost, billing_cycle, category, "active", datetime.utcnow().isoformat()))
+        conn.commit()
+        conn.close()
             
         return TaskResult(
             success=True,
@@ -469,12 +475,15 @@ class FinanceAgent(BaseAgent):
         # Create budget based on historical data and projections
         budget = await self._create_budget(budget_type, target_period)
         
-        # Save budget
-        os.makedirs("financial_data", exist_ok=True)
-        budget_file = f"financial_data/budget_{budget_type}_{target_period}.json"
-        
-        with open(budget_file, "w") as f:
-            json.dump(budget, f, indent=2)
+        # Save budget to DB
+        conn = sqlite3.connect(self.db_path)
+        c = conn.cursor()
+        c.execute('''
+            INSERT INTO budgets (budget_type, target_period, data)
+            VALUES (?, ?, ?)
+        ''', (budget_type, target_period, json.dumps(budget)))
+        conn.commit()
+        conn.close()
             
         return TaskResult(
             success=True,
